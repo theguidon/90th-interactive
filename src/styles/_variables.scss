@@ -1,0 +1,24 @@
+$navy: #173359;
+$navy-gradient: linear-gradient(90deg, #173359 0%, #2C4396 100%);
+$gray: #DADADA;
+$white:#fff;
+$black-alpha: rgba(0, 0, 0, 0.5);
+
+// font-sizes (fixed) 
+$font-size--9: 3.052em; // 48.83px
+$font-size--8: 2.441em; // 39.06px
+$font-size--7: 1.953em; // 31.25px
+$font-size--6: 1.563em; // 25.00px
+$font-size--5: 1.250em; // 20.00px
+$font-size--4: 1.000em; // 16.00px (DEFAULT)
+$font-size--3: 0.800em; // 12.80px
+$font-size--2: 0.640em; // 10.24px
+$font-size--1: 0.5120em; // 8.19px
+
+@media screen and (max-width: 1199px) {}
+
+@media screen and (max-width: 991px) {}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 575px) {}

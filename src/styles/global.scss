@@ -1,0 +1,89 @@
+@import "./variables.scss";
+
+// import fonts locally
+@font-face {
+    font-family: "Tiempos Headline Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Tiempos Headline Regular"), url("~@/assets/fonts/TiemposHeadline-Regular.otf") format("otf");
+}
+
+@font-face {
+    font-family: "Tiempos Headline Bold";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Tiempos Headline Bold"), url("~@/assets/fonts/TiemposHeadline-Bold.otf") format("otf");
+}
+
+// reset styles
+* {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0;
+    user-select: none;
+    position: relative;
+}
+
+html,
+body {
+    font-family: "Tiempos Headline Regular", serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    transition: all ease 1.5s;
+}
+
+// global styles
+section {
+    height: 100vh;
+    width: 100%;
+}
+
+.center-wrapper {
+    max-width: 1400px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.static-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+// transition fade
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+
+// triangle btn
+#triangle {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+
+    .triangle {
+        // background-color: black;
+        border-top: solid 25px $navy;
+        border-left: solid 15px transparent;
+        border-right: solid 15px transparent;
+        height: 2.5em;
+    }
+}

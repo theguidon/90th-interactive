@@ -4,7 +4,7 @@
       <div id="master" class="center">
         <!-- gdn intro -->
         <transition name="fade" mode="out-in">
-          <div id="search" class="center" v-if="active <=3">
+          <div id="search" class="center" v-if="active <=3 && active >=0">
             <!-- logo -->
             <transition name="fade" mode="out-in">
               <div v-if="active === 2" class="logo-container center">
@@ -53,7 +53,7 @@
         </transition>
         <!-- laptop -->
         <transition name="fade" mode="out-in">
-          <div id="laptop" v-if="active <=7">
+          <div id="laptop" v-if="active <=7 && active >=4">
             <!-- laptop w/ header -->
             <transition name="fade" mode="out-in">
               <div class="laptop-wrapper search-header center" v-if="active ===4">
@@ -99,7 +99,7 @@
         </transition>
         <!-- perks -->
         <transition name="fade" mode="out-in">
-          <div id="perks" v-if="active <=11">
+          <div id="perks" v-if="active <=11 && active>=8">
             <transition name="fade">
               <div class="perks-linear center" v-if="active >= 8 && active <=9">
                 <!-- perks w mobile phone -->
@@ -158,7 +158,7 @@
         </transition>
         <!-- pros and cons -->
         <transition name="fade" mode="out-in">
-          <div id="pros-cons">
+          <div id="pros-cons" v-if="active <= 21 && active >=12">
             <transition name="fade" v-if="active>=12 && active <=21">
               <div class="pros center">
                 <div class="pros-container">
@@ -338,6 +338,233 @@
             </transition>
           </div>
         </transition>
+        <!-- into the future -->
+        <transition name="fade" mode="out-in">
+          <div id="future" v-if="active>=22 && active <=24">
+            <div class="future-container center">
+              <div class="screen-container center">
+                <div id="screen"></div>
+              </div>
+
+              <div class="girl1">
+                <div id="girl1" class="illus"></div>
+              </div>
+
+              <transition name="fade">
+                <div class="man" v-if="active >= 23">
+                  <div id="man" class="illus"></div>
+                </div>
+              </transition>
+
+              <transition name="fade">
+                <div class="girl2" v-if="active >= 24">
+                  <div id="girl2" class="illus"></div>
+                </div>
+              </transition>
+
+              <div class="screen-menu center">
+                <div
+                  class="menu-1 dot"
+                  v-if="active===22"
+                  v-bind:style="{backgroundColor:'#7d7d7d'}"
+                ></div>
+                <div class="menu-1 dot" v-else></div>
+                <div
+                  class="menu-2 dot"
+                  v-if="active===23"
+                  v-bind:style="{backgroundColor:'#7d7d7d'}"
+                ></div>
+                <div class="menu-2 dot" v-else></div>
+                <div
+                  class="menu-3 dot"
+                  v-if="active===24"
+                  v-bind:style="{backgroundColor:'#7d7d7d'}"
+                ></div>
+                <div class="menu-3 dot" v-else></div>
+              </div>
+
+              <!-- text 1 -->
+              <transition name="fade">
+                <div class="screen-text-container center" v-if="active===22">
+                  <div class="screen-text">
+                    <span>Into the future</span>
+                    <p>While there is much excitement surrounding The GUIDON’s future as a fully online publication, Soriano notes that the transition must be gradual and well thought-out. According to her, the first step on this journey, which is currently underway, is to survey readers in order to gauge their reaction to the shift towards online content and remain sensitive to the audience’s preferences.</p>
+                    <p>Associate Editor Margarita C. Gonzalez says that it is vital to ensure that staffers are prepared to carry out the transition. This means that writers must be able to both conceptualize content that goes beyond the printed word and execute these concepts through collaboration with design cluster staffers.</p>
+                  </div>
+                </div>
+              </transition>
+
+              <!-- text 2 -->
+              <transition name="fade">
+                <div class="screen-text-container center" v-if="active===23">
+                  <div class="screen-text">
+                    <p>Meanwhile, Design Executive Editor Jason T. Mariano highlights the necessary innovations that need to be made to The GUIDON’s website in order to support the influx of online releases. “Being in this position in the 90th Year, we can lay out the road map to make that happen, … we do not live in a print only era, that is why it calls to a shift to online,” said Mariano.</p>
+                    <p>One major focus is the creation of an interactive and dynamic website which is optimized for both desktop and mobile devices. With this, the Digital Development staff will take the lead in coding a website that can host a wide range of multimedia content that the publication plans to release.</p>
+                  </div>
+                </div>
+              </transition>
+
+              <!-- text 3 -->
+              <transition name="fade">
+                <div class="screen-text-container center" v-if="active===24">
+                  <div class="screen-text">
+                    <p>In addition to optimizing The GUIDON’s website, the Design Cluster is also looking towards developing an app which will serve as a hub for all of the publication’s content. This will make it easier for readers to access The GUIDON’s releases. From the perspective of Graphic Design Editor Carmela Masiglat, the app will help increase reader engagement due to its focus on graphics and illustrations, as well as its interactive features.</p>
+                  </div>
+                </div>
+              </transition>
+            </div>
+          </div>
+        </transition>
+        <!-- mobile app -->
+        <transition name="fade" mode="out-in">
+          <div id="mobile" v-if="active >= 25 && active <26">
+            <div class="mobile-container center">
+              <!-- header -->
+              <div class="app-container center">
+                <span
+                  @click="resetApp"
+                >Click on the red elements to view the future Guidon app features.</span>
+              </div>
+              <!-- phone -->
+              <div class="phone-container center">
+                <div id="phone"></div>
+                <div class="features-wrapper">
+                  <div class="live-wrapper">
+                    <!-- shift through assets on click -->
+                    <transition name="fade">
+                      <div class="l-wrapper" v-if="live">
+                        <div id="live" @click="clickLive"></div>
+                      </div>
+                    </transition>
+
+                    <transition name="fade">
+                      <div class="l-wrapper" v-if="liveAlpha">
+                        <div id="live-alpha" @click="clickLive"></div>
+                      </div>
+                    </transition>
+                  </div>
+
+                  <div class="articles-wrapper">
+                    <transition name="fade" mode="out-in">
+                      <!-- shift through assets on click -->
+                      <div class="s-wrapper" v-if="save">
+                        <div id="save" @click="clickSave"></div>
+                      </div>
+                    </transition>
+
+                    <transition name="fade" mode="out-in">
+                      <div class="s-wrapper" v-if="saveAlpha">
+                        <div id="save-alpha" @click="clickSave"></div>
+                      </div>
+                    </transition>
+                    <!-- shift through assets on click -->
+                    <transition name="fade" mode="out-in">
+                      <div class="a-wrapper" v-if="article">
+                        <div id="articles" @click="clickArticle"></div>
+                      </div>
+                    </transition>
+
+                    <transition name="fade" mode="out-in">
+                      <div class="a-wrapper" v-if="articleAlpha">
+                        <div id="articles-alpha" @click="clickArticle"></div>
+                      </div>
+                    </transition>
+                  </div>
+
+                  <div class="chat-wrapper">
+                    <!-- shift through assets on click -->
+                    <transition name="fade" mode="out-in">
+                      <div class="c-wrapper" v-if="chat">
+                        <div id="chat" @click="clickChat"></div>
+                      </div>
+                    </transition>
+
+                    <transition name="fade" mode="out-in">
+                      <div class="c-wrapper" v-if="chatAlpha">
+                        <div id="chat-alpha" @click="clickChat"></div>
+                      </div>
+                    </transition>
+                  </div>
+                </div>
+              </div>
+              <!-- accompanying text -->
+              <div class="appfeat-container center">
+                <div class="live-article-container center">
+                  <transition name="fade" mode="out-in">
+                    <div class="livestreaming-container" v-if="livestream">
+                      <span class="title">Livestreaming</span>
+                      <p>"[The GUIDON] does livestreaming ...this might be a good way to get access to watches because you’re going to get that push notification ...Just one tap and you’re watching already."</p>
+                      <span class="head">Jacob Uriel R. Quintos, Digital Development Deputy</span>
+                    </div>
+                  </transition>
+
+                  <transition name="fade" mode="out-in">
+                    <div class="breaking-container" v-if="breaking">
+                      <span class="title">Breaking Articles</span>
+                      <p>"I think one of the main features [is transmitting] all the breaking articles, especially if they are relevant because the [article’s popularity] really depends on relevance."</p>
+                      <span class="head">Bryce R. Rubi, Social Media Manager</span>
+                    </div>
+                  </transition>
+                </div>
+                <div class="save-chat-container center">
+                  <transition name="fade" mode="out-in">
+                    <div class="saved-container" v-if="saved">
+                      <span class="title">Saved Articles</span>
+                      <p>"Having a feature that can save articles, because the website we have now, you can only save it by having the tab open and a lot of our content is timeless in nature"</p>
+                      <span class="head">Jason T. Mariano, Design Executive Editor</span>
+                    </div>
+                  </transition>
+
+                  <transition name="fade" mode="out-in">
+                    <div class="forum-container" v-if="forum">
+                      <span class="title">Chat Forum</span>
+                      <p>"I think it would be good if there was a forum portion. The only time the reader really has something to say is when our work is already done."</p>
+                      <span class="head">Carmela Masiglat, Graphic Design Editor</span>
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+        <!-- app details -->
+        <transition name="fade" mode="out-in">
+          <div id="details" v-if="active >=26 && active <=27">
+            <div class="final-txt-container center">
+              <div class="ftxt-wrapper">
+                <div class="final-txt">
+                  <p>The focus on multimedia content will also allow the publication’s Design Cluster to take on a bigger role in pitching and conceptualizing releases. According to Mariano, the Design Cluster staffs—such as Graphic Design and Photos—will be asked to pursue their own stories outside the needs of the Writing Cluster. Included in these plans is a platform for staffers to pitch their own projects in order to push for more online releases.</p>
+                  <p>In order to facilitate all these changes, The GUIDON plans to reduce the volume of its print issues, in terms of frequency of releases and overall number and length of articles, according to Soriano and Gonzalez. This move will allow writers, artists, and photographers to focus more on collaborative multimedia content.</p>
+                </div>
+
+                <div class="stack-container">
+                  <transition name="fade" mode="out-in">
+                    <div id="stack" v-if="active===26"></div>
+                  </transition>
+                  <transition name="fade" mode="out-in">
+                    <div id="comp" v-if="active===27"></div>
+                  </transition>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+
+        <!-- FINAL WORDS -->
+        <transition name="fade" mode="out-in">
+          <div id="final" v-if="active===28">
+            <div class="collage-bg-container">
+              <div id="upper"></div>
+              <div id="lower"></div>
+            </div>
+            <div class="final-words-container center">
+              <div class="final-words">
+                <p>Yet, amidst all the hype about The GUIDON’s digital platform, Soriano and Gonzalez both agree that there will always be a role for print releases, especially for issues that correspond to a specific theme. They believe that special releases have the potential to make more of an impact if they are planned out with a specific purpose in mind.</p>
+                <p>While social media trends are ever evolving, the printed format remains reliable for its constancy. Soriano states that while online content is currently more preferred, print releases provide a “safety net” and the assurance that the publication is able to release content.</p>
+              </div>
+            </div>
+          </div>
+        </transition>
       </div>
     </section>
 
@@ -362,6 +589,13 @@
     <section ref="animate-19"></section>
     <section ref="animate-20"></section>
     <section ref="animate-21"></section>
+    <section ref="animate-22"></section>
+    <section ref="animate-23"></section>
+    <section ref="animate-24"></section>
+    <section ref="animate-25"></section>
+    <section ref="animate-26"></section>
+    <section ref="animate-27"></section>
+    <section ref="animate-28"></section>
   </div>
 </template>
 
@@ -369,7 +603,19 @@
 export default {
   data() {
     return {
-      active: 0
+      active: 0,
+      live: true,
+      save: true,
+      article: true,
+      chat: true,
+      liveAlpha: false,
+      saveAlpha: false,
+      articleAlpha: false,
+      chatAlpha: false,
+      livestream: false,
+      breaking: false,
+      saved: false,
+      forum: false
     };
   },
   methods: {
@@ -391,13 +637,106 @@ export default {
       }
 
       // expand gdn online
-      if (this.active >= 2) {
+      if (this.active >= 2 && this.active <= 3) {
         document.querySelector(".search-box").style.width = "100%";
         document.querySelector(".search-box").style.background =
           "linear-gradient(90deg, #173359 0%, #2C4396 100%)";
       } else {
         document.querySelector(".search-box").removeAttribute("style");
       }
+    },
+    // click events for the mobile
+    clickLive: function() {
+      // hardcode to avoid overlaps on clicks :D
+      this.live = true;
+      this.liveAlpha = false;
+
+      this.chat = false;
+      this.chatAlpha = true;
+
+      this.save = false;
+      this.saveAlpha = true;
+
+      this.article = false;
+      this.articleAlpha = true;
+
+      // hardcode text also lol
+      this.livestream = true;
+      this.breaking = false;
+      this.saved = false;
+      this.forum = false;
+    },
+    clickSave: function() {
+      this.live = false;
+      this.liveAlpha = true;
+
+      this.chat = false;
+      this.chatAlpha = true;
+
+      this.save = true;
+      this.saveAlpha = false;
+
+      this.article = false;
+      this.articleAlpha = true;
+
+      this.livestream = false;
+      this.breaking = false;
+      this.saved = true;
+      this.forum = false;
+    },
+    clickArticle: function() {
+      this.live = false;
+      this.liveAlpha = true;
+
+      this.chat = false;
+      this.chatAlpha = true;
+
+      this.save = false;
+      this.saveAlpha = true;
+
+      this.article = true;
+      this.articleAlpha = false;
+
+      this.livestream = false;
+      this.breaking = true;
+      this.saved = false;
+      this.forum = false;
+    },
+    clickChat: function() {
+      this.live = false;
+      this.liveAlpha = true;
+
+      this.chat = true;
+      this.chatAlpha = false;
+
+      this.save = false;
+      this.saveAlpha = true;
+
+      this.article = false;
+      this.articleAlpha = true;
+
+      this.livestream = false;
+      this.breaking = false;
+      this.saved = false;
+      this.forum = true;
+    },
+    resetApp() {
+      this.live = true;
+      this.liveAlpha = false;
+
+      this.chat = true;
+      this.chatAlpha = false;
+
+      this.save = true;
+      this.saveAlpha = false;
+
+      this.article = true;
+      this.articleAlpha = false;
+
+      this.livestream = false;
+      this.breaking = false;
+      this.saved = false;
+      this.forum = false;
     }
   },
   mounted() {
@@ -426,13 +765,13 @@ export default {
     z-index: 5;
     background: $navy;
     width: 10vw;
-    height: 10vw;
+    height: 8vw;
     max-height: 130px;
     max-width: 800px;
 
     @media screen and (max-width: 991px) {
       width: 12vw;
-      height: 12vw;
+      height: 10vw;
       max-width: 65vw;
     }
 
@@ -442,7 +781,7 @@ export default {
 
     @media screen and (max-width: 575px) {
       width: 14vw;
-      height: 14vw;
+      height: 12vw;
       max-width: 75vw;
     }
 
@@ -498,9 +837,12 @@ export default {
     width: 100%;
     position: fixed;
     transition: 0.5s all ease;
-    top: 15%;
-    @media screen and (max-width: 575px) {
-      top: 20%;
+    top: 7.5%;
+
+    img {
+      @media screen and (max-width: 768px) {
+        height: 150px;
+      }
     }
   }
 
@@ -509,20 +851,7 @@ export default {
     width: 100%;
     position: fixed;
     transition: 0.5s all ease;
-    bottom: 10%;
-
-    @media screen and (max-width: 991px) {
-      bottom: 15%;
-    }
-
-    @media screen and (max-width: 768px) {
-      bottom: 20%;
-    }
-
-    @media screen and (max-width: 575px) {
-      bottom: 25%;
-    }
-
+    bottom: 7.5%;
     div {
       text-align: center;
       margin: 3% 0;
@@ -593,6 +922,10 @@ export default {
 
       @media screen and (max-width: 768px) {
         width: 85vw;
+      }
+
+      @media screen and (max-width: 575px) {
+        font-size: $font-size--4;
       }
     }
   }
@@ -758,6 +1091,10 @@ export default {
         @media screen and (max-width: 575px) {
           font-size: $font-size--5;
         }
+
+        @media screen and (max-width: 425px) {
+          font-size: $font-size--4;
+        }
       }
 
       p {
@@ -767,6 +1104,10 @@ export default {
         }
         @media screen and (max-width: 575px) {
           font-size: $font-size--5;
+        }
+
+        @media screen and (max-width: 425px) {
+          font-size: $font-size--4;
         }
       }
     }
@@ -847,6 +1188,10 @@ export default {
         @media screen and (max-width: 575px) {
           font-size: $font-size--5;
         }
+
+        @media screen and (max-width: 425px) {
+          font-size: $font-size--4;
+        }
       }
 
       p {
@@ -856,6 +1201,10 @@ export default {
         }
         @media screen and (max-width: 575px) {
           font-size: $font-size--5;
+        }
+
+        @media screen and (max-width: 425px) {
+          font-size: $font-size--4;
         }
       }
     }
@@ -909,6 +1258,9 @@ export default {
         }
         @media screen and (max-width: 575px) {
           font-size: $font-size--5;
+        }
+        @media screen and (max-width: 425px) {
+          font-size: $font-size--4;
         }
       }
     }
@@ -1119,6 +1471,636 @@ export default {
 
     #arms {
       background-image: url("../assets/background/pros/arms.png");
+    }
+  }
+}
+
+// INTO THE FUTURE
+#future {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+
+  .future-container {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(44, 67, 150, 0.97) 0%,
+      #173359 100%
+    );
+
+    .screen-container {
+      height: 100%;
+      width: 100%;
+
+      #screen {
+        height: 90vh;
+        width: 90vw;
+        max-width: 1400px;
+        background-image: url("../assets/background/Window.png");
+        background-repeat: no-repeat;
+        background-position: unset;
+
+        @media screen and (min-width: 1400px) {
+          background-position: top center;
+        }
+      }
+    }
+
+    .screen-text-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      .screen-text {
+        width: 85vw;
+        max-width: 1200px;
+        text-align: justify;
+        line-height: 1.5em;
+
+        font-size: $font-size--7;
+
+        @media screen and (max-width: 1199px) {
+          font-size: $font-size--6;
+        }
+
+        @media screen and (max-width: 575px) {
+          font-size: $font-size--5;
+          width: 80vw;
+        }
+
+        @media screen and (max-width: 425px) {
+          font-size: $font-size--4;
+        }
+
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .screen-menu {
+      position: absolute;
+      width: 100px;
+      justify-content: space-around;
+      bottom: 15%;
+
+      .dot {
+        height: 20px;
+        width: 20px;
+        background: rgba(115, 115, 115, 0.25);
+        border-radius: 50%;
+
+        @media screen and (max-width: 768px) {
+          height: 15px;
+          width: 15px;
+        }
+      }
+    }
+  }
+
+  .illus {
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .girl1 {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    @media screen and (min-width: 1500px) {
+      max-width: 50%;
+    }
+
+    #girl1 {
+      width: 100%;
+      height: 175px;
+      background-image: url("../assets/background/Girl.png");
+      background-position: left bottom;
+      bottom: 3%;
+      left: 1.5%;
+      transition: all 0.5s;
+
+      @media screen and (max-width: 768px) {
+        height: 150px;
+        left: 1%;
+      }
+      @media screen and (max-width: 375px) {
+        height: 125px;
+      }
+    }
+  }
+
+  .girl2 {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    @media screen and (min-width: 1500px) {
+      max-width: 50%;
+    }
+
+    #girl2 {
+      width: 100%;
+      height: 225px;
+      background-image: url("../assets/background/Girl-1.png");
+      background-position: 93% bottom;
+      bottom: 5%;
+      transition: all 0.5s;
+
+      @media screen and (max-width: 768px) {
+        height: 200px;
+        background-position: 98% bottom;
+      }
+
+      @media screen and (max-width: 575px) {
+        height: 175px;
+        bottom: 10%;
+      }
+
+      @media screen and (max-width: 375px) {
+        height: 150px;
+      }
+    }
+  }
+
+  .man {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    #man {
+      width: 100%;
+      height: 200px;
+      background-image: url("../assets/background/Man.png");
+      background-position: 60% center;
+      bottom: 1%;
+      transition: all 0.5s;
+
+      @media screen and (max-width: 768px) {
+        height: 150px;
+        background-position: 70% center;
+      }
+
+      @media screen and (max-width: 575px) {
+        background-position: 80% center;
+      }
+
+      @media screen and (max-width: 375px) {
+        background-position: 85% center;
+      }
+    }
+  }
+}
+
+// MOBILE PHONE
+#mobile {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+
+  .mobile-container {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(44, 67, 150, 0.97) 0%,
+      #173359 100%
+    );
+    flex-direction: column;
+
+    .app-container {
+      width: 100%;
+      height: 75%;
+      text-align: center;
+      align-items: flex-start;
+      position: absolute;
+
+      @media screen and (max-width: 768px) {
+        height: 100%;
+        align-items: center;
+      }
+
+      span {
+        color: $white;
+        font-size: $font-size--6;
+        width: 40%;
+        margin: 1.5%;
+        z-index: 10;
+
+        @media screen and (max-width: 1199px) {
+          width: 50%;
+          font-size: $font-size--5;
+        }
+
+        @media screen and(max-width: 768px) {
+          max-width: 280px;
+          color: $red;
+          font-weight: bold;
+          font-size: $font-size--4;
+          top: 10%;
+        }
+
+        @media screen and (max-width: 575px) {
+          width: 60%;
+          font-size: $font-size--3;
+        }
+
+        @media screen and (max-width: 425px) {
+        }
+      }
+    }
+
+    // phone container
+    .phone-container {
+      height: 100%;
+      width: 100%;
+      align-items: flex-end;
+      z-index: 9;
+
+      #phone {
+        height: 75vh;
+        width: 100%;
+        background-image: url("../assets/background/Phone.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+      }
+    }
+
+    // features container inside the phone
+    .features-wrapper {
+      height: 70vh;
+      width: 320px;
+      margin: 0 auto;
+      position: absolute;
+      transition: all 0.5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      @media screen and (max-width: 1199px) {
+        width: 300px;
+      }
+
+      @media screen and (max-width: 575px) {
+        width: 280px;
+      }
+
+      @media screen and (max-width: 375px) {
+        top: 25%;
+      }
+
+      .live-wrapper {
+        width: 100%;
+        height: 20px;
+
+        .l-wrapper {
+          height: auto;
+          width: 100%;
+          position: absolute;
+        }
+
+        #live {
+          height: 20px;
+          background-image: url("../assets/background/phone/Live.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: left;
+        }
+
+        #live-alpha {
+          height: 20px;
+          background-image: url("../assets/background/phone/Live-alpha.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: left;
+        }
+      }
+
+      .chat-wrapper {
+        width: 100%;
+        height: 55px;
+
+        .c-wrapper {
+          height: auto;
+          width: 100%;
+          position: absolute;
+        }
+
+        #chat {
+          height: 50px;
+          background-image: url("../assets/background/phone/Chat.png");
+          background-repeat: no-repeat;
+          background-size: 100%;
+          background-position: center;
+        }
+
+        #chat-alpha {
+          height: 50px;
+          background-image: url("../assets/background/phone/Chat-alpha.png");
+          background-repeat: no-repeat;
+          background-size: 100%;
+          background-position: center;
+        }
+      }
+
+      .articles-wrapper {
+        height: 55%;
+        width: 100%;
+        margin: 3% 0;
+
+        .a-wrapper,
+        .s-wrapper {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        }
+
+        #save {
+          height: 40px;
+          width: 99%;
+          background-image: url("../assets/background/phone/ribbon.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: right;
+          position: absolute;
+          z-index: 9;
+        }
+
+        #save-alpha {
+          height: 40px;
+          width: 99%;
+          background-image: url("../assets/background/phone/Save-alpha.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: right;
+          position: absolute;
+          z-index: 8;
+        }
+
+        #articles {
+          height: 100%;
+          width: 100%;
+          background-image: url("../assets/background/phone/articles.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+
+        #articles-alpha {
+          height: 100%;
+          width: 100%;
+          background-image: url("../assets/background/phone/Article-alpha.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    }
+
+    // texts that appear on click
+    .appfeat-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      justify-content: space-between;
+      flex-direction: row;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+
+      .live-article-container,
+      .save-chat-container {
+        height: 100%;
+        width: 35%;
+
+        @media screen and (max-width: 768px) {
+          position: absolute;
+          width: 100%;
+        }
+      }
+
+      .livestreaming-container,
+      .breaking-container,
+      .saved-container,
+      .forum-container {
+        position: absolute;
+        margin: 5%;
+        width: 100%;
+
+        @media screen and (max-width: 768px) {
+          top: 0;
+        }
+
+        span,
+        p {
+          color: $white;
+          text-align: justify;
+          font-size: $font-size--6;
+
+          @media screen and (max-width: 1199px) {
+            font-size: $font-size--5;
+          }
+
+          @media screen and (max-width: 575px) {
+            font-size: $font-size--4;
+          }
+
+          @media screen and (max-width: 425px) {
+            font-size: $font-size--3;
+          }
+        }
+
+        span {
+          font-weight: bold;
+        }
+
+        .head {
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
+
+// final words on d app
+#details {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  .final-txt-container {
+    height: 100%;
+    width: 85%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .ftxt-wrapper {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column-reverse;
+      }
+    }
+
+    .final-txt {
+      width: 55vw;
+      text-align: justify;
+      line-height: 2.5em;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 575px) {
+        height: 60%;
+      }
+
+      p {
+        font-size: $font-size--6;
+
+        @media screen and (max-width: 1199px) {
+          font-size: $font-size--5;
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: $font-size--4;
+          line-height: 2em;
+        }
+
+        @media screen and (max-width: 575px) {
+          font-size: $font-size--3;
+        }
+      }
+    }
+
+    .stack-container {
+      width: 45vw;
+      margin-left: 3%;
+      height: 100%;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        margin: 0;
+      }
+
+      @media screen and (max-width: 575px) {
+        height: 40%;
+      }
+      #stack {
+        height: 100%;
+        width: 100%;
+        background-image: url("../assets/background/NewspaperStack.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+      }
+
+      #comp {
+        height: 100%;
+        width: 100%;
+        background-image: url("../assets/background/Comp.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+      }
+    }
+  }
+}
+
+// final words na talaga
+#final {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  .final-words-container {
+    height: 100%;
+    width: 85%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    p {
+      font-size: $font-size--7;
+      text-align: justify;
+      line-height: 1.5em;
+
+      @media screen and (max-width: 1199px) {
+        font-size: $font-size--6;
+      }
+
+      @media screen and (max-width: 768px) {
+        font-size: $font-size--5;
+      }
+
+      @media screen and (max-width: 575px) {
+        font-size: $font-size--4;
+      }
+    }
+  }
+
+  .collage-bg-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    #upper {
+      height: 50%;
+      background-image: url("../assets/background/UpperCollage.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+      bottom: 20%;
+
+      @media screen and (max-width: 768px) {
+        bottom: 10%;
+      }
+
+      @media screen and (max-width: 575px) {
+        bottom: 5%;
+      }
+    }
+
+    #lower {
+      height: 50%;
+      background-image: url("../assets/background/LowerCollage.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      top: 20%;
+
+      @media screen and (max-width: 768px) {
+        top: 10%;
+      }
+
+      @media screen and (max-width: 575px) {
+        top: 5%;
+      }
     }
   }
 }

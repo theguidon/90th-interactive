@@ -4,11 +4,13 @@
       <div id="master" class="center">
         <!-- gdn intro -->
         <transition name="fade" mode="out-in">
-          <div id="search" class="center" v-if="active <=3 && active >=0">
+          <div id="search" class="center" v-if="active <= 3 && active >= 0">
             <!-- logo -->
             <transition name="fade" mode="out-in">
               <div v-if="active === 2" class="logo-container center">
-                <img id="tgdn" src="../assets/icons/02 90th Year Logo (BLUE).png" alt="tgdn" />
+                <div class="tgdn-icon">
+                  <div id="tgdn"></div>
+                </div>
               </div>
             </transition>
             <!-- search tgdn -->
@@ -45,7 +47,9 @@
             <div id="laptop">
               <transition name="fade" mode="out-in">
                 <div class="laptop-wrapper center" v-if="active === 3">
-                  <img id="mac" src="../assets/background/laptop.png" alt="MACBOOK" />
+                  <div class="macbook-container">
+                    <div id="mac"></div>
+                  </div>
                 </div>
               </transition>
             </div>
@@ -53,11 +57,16 @@
         </transition>
         <!-- laptop -->
         <transition name="fade" mode="out-in">
-          <div id="laptop" v-if="active <=7 && active >=4">
+          <div id="laptop" v-if="active <= 7 && active >= 4">
             <!-- laptop w/ header -->
             <transition name="fade" mode="out-in">
-              <div class="laptop-wrapper search-header center" v-if="active ===4">
-                <img id="mac" src="../assets/background/search-laptop.png" alt="MACBOOK" />
+              <div
+                class="laptop-wrapper search-header center"
+                v-if="active === 4"
+              >
+                <div class="macbook-container">
+                  <div id="mac-search"></div>
+                </div>
               </div>
             </transition>
             <!-- laptop text -->
@@ -67,16 +76,21 @@
                   FOR 90 years, The GUIDON has committed itself to providing its
                   readers with accurate and engaging content, made accessible
                   through newsstands across the campus. After the publication
-                  launched its online platforms in 2008, it has steadily begun to
-                  delve into the world of digital journalism. Looking towards the
-                  future, The GUIDON hopes to fully transition into an online
-                  publication by its 100th year.
+                  launched its online platforms in 2008, it has steadily begun
+                  to delve into the world of digital journalism. Looking towards
+                  the future, The GUIDON hopes to fully transition into an
+                  online publication by its 100th year.
                 </p>
               </div>
             </transition>
             <transition name="fade" mode="out-in">
               <div class="laptop-text3 center" v-if="active === 5">
-                <p>Currently, The GUIDON releases around 2,000 physical copies of its paper each month. While these issues are made available to readers before they are released online, much of the publication’s engagement comes from its digital platforms.</p>
+                <p>
+                  Currently, The GUIDON releases around 2,000 physical copies of
+                  its paper each month. While these issues are made available to
+                  readers before they are released online, much of the
+                  publication’s engagement comes from its digital platforms.
+                </p>
               </div>
             </transition>
             <!-- newspaper bg -->
@@ -84,12 +98,15 @@
               <div class="laptop-text2 center" v-if="active >= 6">
                 <p class="white">
                   Currently, The GUIDON releases around
-                  <b>2,000 physical copies</b> of its paper each month. While these issues are made available to readers before they are released online, much of the publication’s engagement comes from its digital platforms.
+                  <b>2,000 physical copies</b> of its paper each month. While
+                  these issues are made available to readers before they are
+                  released online, much of the publication’s engagement comes
+                  from its digital platforms.
                 </p>
               </div>
             </transition>
             <transition name="fade" mode="out-in">
-              <div class="newspaper-container" v-if="active >=6">
+              <div class="newspaper-container" v-if="active >= 6">
                 <div id="newspapers">
                   <div class="layer"></div>
                 </div>
@@ -99,16 +116,28 @@
         </transition>
         <!-- perks -->
         <transition name="fade" mode="out-in">
-          <div id="perks" v-if="active <=11 && active>=8">
+          <div id="perks" v-if="active <= 11 && active >= 8">
             <transition name="fade">
-              <div class="perks-linear center" v-if="active >= 8 && active <=9">
+              <div
+                class="perks-linear center"
+                v-if="active >= 8 && active <= 9"
+              >
                 <!-- perks w mobile phone -->
                 <transition name="fade" mode="out-in">
-                  <div class="perks-container" v-if="active ===8">
+                  <div class="perks-container" v-if="active === 8">
                     <div class="perks-text">
                       <div class="perks-txt-wrapper">
                         <span>The perks of going digital</span>
-                        <p>According to Editor-in-Chief Alithea C. Soriano, adjusting to the demands of its audience is one of the biggest factors pushing The GUIDON to produce more online multimedia content. She also stresses the importance of moving with the times when it comes to staying relevant to the lifestyle of the readers, especially with the rising demand for easily accessible news amidst the “boom of social media”.</p>
+                        <p>
+                          According to Editor-in-Chief Alithea C. Soriano,
+                          adjusting to the demands of its audience is one of the
+                          biggest factors pushing The GUIDON to produce more
+                          online multimedia content. She also stresses the
+                          importance of moving with the times when it comes to
+                          staying relevant to the lifestyle of the readers,
+                          especially with the rising demand for easily
+                          accessible news amidst the “boom of social media”.
+                        </p>
                       </div>
                     </div>
                     <div class="perks-digital">
@@ -121,7 +150,14 @@
                   <div class="eic-container" v-if="active === 9">
                     <div class="eic-text">
                       <div class="eic-txt-wrapper">
-                        <p>"Publications in general really have to be aware of their target market, or target audience, their readers, their stakeholders. Why? Because writing your stories and the way you disseminate it, the effectiveness or the impact of that is determined by how well you know your readers’ habits."</p>
+                        <p>
+                          "Publications in general really have to be aware of
+                          their target market, or target audience, their
+                          readers, their stakeholders. Why? Because writing your
+                          stories and the way you disseminate it, the
+                          effectiveness or the impact of that is determined by
+                          how well you know your readers’ habits."
+                        </p>
                         <span>Alithea C. Soriano, Editor-in-Chief</span>
                       </div>
                     </div>
@@ -133,21 +169,38 @@
               </div>
 
               <!-- transition to pros and cons -->
-              <div class="pc center" v-if="active >= 10 && active <=11">
+              <div class="pc center" v-if="active >= 10 && active <= 11">
                 <transition name="fade" mode="out-in">
-                  <div class="sm-container" v-if="active===10">
+                  <div class="sm-container" v-if="active === 10">
                     <div class="sm-txt-wrapper">
-                      <p>The GUIDON’s Social Media managers Bryce Rubi and Deana Pagtalunan can attest to the potential of shifting to a fully online platform, serving as first-hand witnesses to just how far online content can reach. As those in charge of monitoring the publication’s social media accounts, they mention the high engagement numbers that posts regarding relevant topics can garner, reaching readers beyond the campus grounds. However, they also point out the unique aspects of print releases that would be left behind if ever this shift ever did occur.</p>
-                      <p>In all, members of The GUIDON’s Editorial Board have found that taking the leap towards the all-digital format has a lot of advantages. Yet, the monumental task is not without its drawbacks.</p>
+                      <p>
+                        The GUIDON’s Social Media managers Bryce Rubi and Deana
+                        Pagtalunan can attest to the potential of shifting to a
+                        fully online platform, serving as first-hand witnesses
+                        to just how far online content can reach. As those in
+                        charge of monitoring the publication’s social media
+                        accounts, they mention the high engagement numbers that
+                        posts regarding relevant topics can garner, reaching
+                        readers beyond the campus grounds. However, they also
+                        point out the unique aspects of print releases that
+                        would be left behind if ever this shift ever did occur.
+                      </p>
+                      <p>
+                        In all, members of The GUIDON’s Editorial Board have
+                        found that taking the leap towards the all-digital
+                        format has a lot of advantages. Yet, the monumental task
+                        is not without its drawbacks.
+                      </p>
                     </div>
                   </div>
                 </transition>
                 <transition name="fade" mode="out-in">
-                  <div class="pc-container" v-if="active===11">
+                  <div class="pc-container" v-if="active === 11">
                     <div class="pc-txt-wrapper">
                       <p>
                         According to our editors, these are the
-                        <b>pros and cons</b> of fully shifting The GUIDON to an online platform:
+                        <b>pros and cons</b> of fully shifting The GUIDON to an
+                        online platform:
                       </p>
                     </div>
                   </div>
@@ -158,18 +211,22 @@
         </transition>
         <!-- pros and cons -->
         <transition name="fade" mode="out-in">
-          <div id="pros-cons" v-if="active <= 21 && active >=12">
-            <transition name="fade" v-if="active>=12 && active <=21">
+          <div id="pros-cons" v-if="active <= 21 && active >= 12">
+            <transition name="fade" v-if="active >= 12 && active <= 21">
               <div class="pros center">
                 <div class="pros-container">
                   <transition name="fade">
-                    <div id="pros" class="center" v-if="active>=12 && active<=17">
+                    <div
+                      id="pros"
+                      class="center"
+                      v-if="active >= 12 && active <= 17"
+                    >
                       <span>Pros</span>
                     </div>
                   </transition>
 
                   <transition name="fade">
-                    <div id="cons" class="center" v-if="active>=18">
+                    <div id="cons" class="center" v-if="active >= 18">
                       <span>Cons</span>
                     </div>
                   </transition>
@@ -177,7 +234,7 @@
                   <!-- content -->
                   <div class="pros-wrapper">
                     <transition name="fade">
-                      <div class="pros-txt" v-if="active===12">
+                      <div class="pros-txt" v-if="active === 12">
                         <div id="defend" class="gdn-img">
                           <div class="pc-txt center">
                             <span>Content can be released immediately.</span>
@@ -193,10 +250,13 @@
                   <!-- articles -->
                   <div class="pros-wrapper">
                     <transition name="fade">
-                      <div class="pros-txt" v-if="active===13">
+                      <div class="pros-txt" v-if="active === 13">
                         <div id="rally" class="gdn-img">
                           <div class="pc-txt center">
-                            <span>Articles remain timely and avoid becoming outdated.</span>
+                            <span
+                              >Articles remain timely and avoid becoming
+                              outdated.</span
+                            >
                           </div>
                           <div class="img-creds">
                             <span>Photo by Zach Garcia</span>
@@ -209,7 +269,7 @@
                   <!-- uaap -->
                   <div class="pros-wrapper">
                     <transition name="fade">
-                      <div class="pros-txt" v-if="active===14">
+                      <div class="pros-txt" v-if="active === 14">
                         <div id="uaap" class="gdn-img">
                           <div class="pc-txt center">
                             <span>Released content spreads faster.</span>
@@ -225,10 +285,13 @@
                   <!-- rally -->
                   <div class="pros-wrapper">
                     <transition name="fade">
-                      <div class="pros-txt" v-if="active===15">
+                      <div class="pros-txt" v-if="active === 15">
                         <div id="rally2" class="gdn-img">
                           <div class="pc-txt center">
-                            <span>Distribution is more environmentally friendly.</span>
+                            <span
+                              >Distribution is more environmentally
+                              friendly.</span
+                            >
                           </div>
                           <div class="img-creds">
                             <span>Photo by Bruce Ong</span>
@@ -241,10 +304,13 @@
                   <!-- fr jett -->
                   <div class="pros-wrapper">
                     <transition name="fade">
-                      <div class="pros-txt" v-if="active===16">
+                      <div class="pros-txt" v-if="active === 16">
                         <div id="fr" class="gdn-img">
                           <div class="pc-txt center">
-                            <span>More creativity and flexibility in terms of content that can be released.</span>
+                            <span
+                              >More creativity and flexibility in terms of
+                              content that can be released.</span
+                            >
                           </div>
                           <div class="img-creds">
                             <span>Photo by Bruce Ong</span>
@@ -257,10 +323,13 @@
                   <!-- arms -->
                   <div class="pros-wrapper">
                     <transition name="fade">
-                      <div class="pros-txt" v-if="active===17">
+                      <div class="pros-txt" v-if="active === 17">
                         <div id="arms" class="gdn-img">
                           <div class="pc-txt center">
-                            <span>Articles are more easily archived digitally.</span>
+                            <span
+                              >Articles are more easily archived
+                              digitally.</span
+                            >
                           </div>
                           <div class="img-creds">
                             <span>Photo by Zach Garcia</span>
@@ -273,10 +342,13 @@
                   <!-- voice -->
                   <div class="cons-wrapper">
                     <transition name="fade">
-                      <div class="cons-txt" v-if="active===18">
+                      <div class="cons-txt" v-if="active === 18">
                         <div id="voice" class="gdn-img">
                           <div class="pc-txt center">
-                            <span>Writers will not feel the gratification of seeing their names on printed newspapers.</span>
+                            <span
+                              >Writers will not feel the gratification of seeing
+                              their names on printed newspapers.</span
+                            >
                           </div>
                           <div class="img-creds">
                             <span>Photo by Regine Salumbre</span>
@@ -289,10 +361,13 @@
                   <!-- owners -->
                   <div class="cons-wrapper">
                     <transition name="fade">
-                      <div class="cons-txt" v-if="active===19">
+                      <div class="cons-txt" v-if="active === 19">
                         <div id="owners" class="gdn-img">
                           <div class="pc-txt center">
-                            <span>Readers lose the feeling of actually holding a newspaper in hand.</span>
+                            <span
+                              >Readers lose the feeling of actually holding a
+                              newspaper in hand.</span
+                            >
                           </div>
                           <div class="img-creds">
                             <span>Photo by Jason Mariano</span>
@@ -305,10 +380,13 @@
                   <!-- embrace -->
                   <div class="cons-wrapper">
                     <transition name="fade">
-                      <div class="cons-txt" v-if="active===20">
+                      <div class="cons-txt" v-if="active === 20">
                         <div id="embrace" class="gdn-img">
                           <div class="pc-txt center">
-                            <span>The tradition of releasing in print is forgone.</span>
+                            <span
+                              >The tradition of releasing in print is
+                              forgone.</span
+                            >
                           </div>
                           <div class="img-creds">
                             <span>Photo by Bruce Ong</span>
@@ -321,10 +399,13 @@
                   <!-- tt -->
                   <div class="cons-wrapper">
                     <transition name="fade">
-                      <div class="cons-txt" v-if="active===21">
+                      <div class="cons-txt" v-if="active === 21">
                         <div id="tt" class="gdn-img">
                           <div class="pc-txt center">
-                            <span>Online articles are not easily accessible for those without social media.</span>
+                            <span
+                              >Online articles are not easily accessible for
+                              those without social media.</span
+                            >
                           </div>
                           <div class="img-creds">
                             <span>Photo by Zoey Ignacio</span>
@@ -340,7 +421,7 @@
         </transition>
         <!-- into the future -->
         <transition name="fade" mode="out-in">
-          <div id="future" v-if="active>=22 && active <=24">
+          <div id="future" v-if="active >= 22 && active <= 24">
             <div class="future-container center">
               <div class="screen-container center">
                 <div id="screen"></div>
@@ -365,50 +446,89 @@
               <div class="screen-menu center">
                 <div
                   class="menu-1 dot"
-                  v-if="active===22"
-                  v-bind:style="{backgroundColor:'#7d7d7d'}"
+                  v-if="active === 22"
+                  v-bind:style="{ backgroundColor: '#7d7d7d' }"
                 ></div>
                 <div class="menu-1 dot" v-else></div>
                 <div
                   class="menu-2 dot"
-                  v-if="active===23"
-                  v-bind:style="{backgroundColor:'#7d7d7d'}"
+                  v-if="active === 23"
+                  v-bind:style="{ backgroundColor: '#7d7d7d' }"
                 ></div>
                 <div class="menu-2 dot" v-else></div>
                 <div
                   class="menu-3 dot"
-                  v-if="active===24"
-                  v-bind:style="{backgroundColor:'#7d7d7d'}"
+                  v-if="active === 24"
+                  v-bind:style="{ backgroundColor: '#7d7d7d' }"
                 ></div>
                 <div class="menu-3 dot" v-else></div>
               </div>
 
               <!-- text 1 -->
               <transition name="fade">
-                <div class="screen-text-container center" v-if="active===22">
+                <div class="screen-text-container center" v-if="active === 22">
                   <div class="screen-text">
                     <span>Into the future</span>
-                    <p>While there is much excitement surrounding The GUIDON’s future as a fully online publication, Soriano notes that the transition must be gradual and well thought-out. According to her, the first step on this journey, which is currently underway, is to survey readers in order to gauge their reaction to the shift towards online content and remain sensitive to the audience’s preferences.</p>
-                    <p>Associate Editor Margarita C. Gonzalez says that it is vital to ensure that staffers are prepared to carry out the transition. This means that writers must be able to both conceptualize content that goes beyond the printed word and execute these concepts through collaboration with design cluster staffers.</p>
+                    <p>
+                      While there is much excitement surrounding The GUIDON’s
+                      future as a fully online publication, Soriano notes that
+                      the transition must be gradual and well thought-out.
+                      According to her, the first step on this journey, which is
+                      currently underway, is to survey readers in order to gauge
+                      their reaction to the shift towards online content and
+                      remain sensitive to the audience’s preferences.
+                    </p>
+                    <p>
+                      Associate Editor Margarita C. Gonzalez says that it is
+                      vital to ensure that staffers are prepared to carry out
+                      the transition. This means that writers must be able to
+                      both conceptualize content that goes beyond the printed
+                      word and execute these concepts through collaboration with
+                      design cluster staffers.
+                    </p>
                   </div>
                 </div>
               </transition>
 
               <!-- text 2 -->
               <transition name="fade">
-                <div class="screen-text-container center" v-if="active===23">
+                <div class="screen-text-container center" v-if="active === 23">
                   <div class="screen-text">
-                    <p>Meanwhile, Design Executive Editor Jason T. Mariano highlights the necessary innovations that need to be made to The GUIDON’s website in order to support the influx of online releases. “Being in this position in the 90th Year, we can lay out the road map to make that happen, … we do not live in a print only era, that is why it calls to a shift to online,” said Mariano.</p>
-                    <p>One major focus is the creation of an interactive and dynamic website which is optimized for both desktop and mobile devices. With this, the Digital Development staff will take the lead in coding a website that can host a wide range of multimedia content that the publication plans to release.</p>
+                    <p>
+                      Meanwhile, Design Executive Editor Jason T. Mariano
+                      highlights the necessary innovations that need to be made
+                      to The GUIDON’s website in order to support the influx of
+                      online releases. “Being in this position in the 90th Year,
+                      we can lay out the road map to make that happen, … we do
+                      not live in a print only era, that is why it calls to a
+                      shift to online,” said Mariano.
+                    </p>
+                    <p>
+                      One major focus is the creation of an interactive and
+                      dynamic website which is optimized for both desktop and
+                      mobile devices. With this, the Digital Development staff
+                      will take the lead in coding a website that can host a
+                      wide range of multimedia content that the publication
+                      plans to release.
+                    </p>
                   </div>
                 </div>
               </transition>
 
               <!-- text 3 -->
               <transition name="fade">
-                <div class="screen-text-container center" v-if="active===24">
+                <div class="screen-text-container center" v-if="active === 24">
                   <div class="screen-text">
-                    <p>In addition to optimizing The GUIDON’s website, the Design Cluster is also looking towards developing an app which will serve as a hub for all of the publication’s content. This will make it easier for readers to access The GUIDON’s releases. From the perspective of Graphic Design Editor Carmela Masiglat, the app will help increase reader engagement due to its focus on graphics and illustrations, as well as its interactive features.</p>
+                    <p>
+                      In addition to optimizing The GUIDON’s website, the Design
+                      Cluster is also looking towards developing an app which
+                      will serve as a hub for all of the publication’s content.
+                      This will make it easier for readers to access The
+                      GUIDON’s releases. From the perspective of Graphic Design
+                      Editor Carmela Masiglat, the app will help increase reader
+                      engagement due to its focus on graphics and illustrations,
+                      as well as its interactive features.
+                    </p>
                   </div>
                 </div>
               </transition>
@@ -417,13 +537,14 @@
         </transition>
         <!-- mobile app -->
         <transition name="fade" mode="out-in">
-          <div id="mobile" v-if="active >= 25 && active <26">
+          <div id="mobile" v-if="active >= 25 && active < 26">
             <div class="mobile-container center">
               <!-- header -->
               <div class="app-container center">
-                <span
-                  @click="resetApp"
-                >Click on the red elements to view the future Guidon app features.</span>
+                <span @click="resetApp"
+                  >Click on the red elements to view the future Guidon app
+                  features.</span
+                >
               </div>
               <!-- phone -->
               <div class="phone-container center">
@@ -493,16 +614,31 @@
                   <transition name="fade" mode="out-in">
                     <div class="livestreaming-container" v-if="livestream">
                       <span class="title">Livestreaming</span>
-                      <p>"[The GUIDON] does livestreaming ...this might be a good way to get access to watches because you’re going to get that push notification ...Just one tap and you’re watching already."</p>
-                      <span class="head">Jacob Uriel R. Quintos, Digital Development Deputy</span>
+                      <p>
+                        "[The GUIDON] does livestreaming ...this might be a good
+                        way to get access to watches because you’re going to get
+                        that push notification ...Just one tap and you’re
+                        watching already."
+                      </p>
+                      <span class="head"
+                        >Jacob Uriel R. Quintos, Digital Development
+                        Deputy</span
+                      >
                     </div>
                   </transition>
 
                   <transition name="fade" mode="out-in">
                     <div class="breaking-container" v-if="breaking">
                       <span class="title">Breaking Articles</span>
-                      <p>"I think one of the main features [is transmitting] all the breaking articles, especially if they are relevant because the [article’s popularity] really depends on relevance."</p>
-                      <span class="head">Bryce R. Rubi, Social Media Manager</span>
+                      <p>
+                        "I think one of the main features [is transmitting] all
+                        the breaking articles, especially if they are relevant
+                        because the [article’s popularity] really depends on
+                        relevance."
+                      </p>
+                      <span class="head"
+                        >Bryce R. Rubi, Social Media Manager</span
+                      >
                     </div>
                   </transition>
                 </div>
@@ -510,16 +646,28 @@
                   <transition name="fade" mode="out-in">
                     <div class="saved-container" v-if="saved">
                       <span class="title">Saved Articles</span>
-                      <p>"Having a feature that can save articles, because the website we have now, you can only save it by having the tab open and a lot of our content is timeless in nature"</p>
-                      <span class="head">Jason T. Mariano, Design Executive Editor</span>
+                      <p>
+                        "Having a feature that can save articles, because the
+                        website we have now, you can only save it by having the
+                        tab open and a lot of our content is timeless in nature"
+                      </p>
+                      <span class="head"
+                        >Jason T. Mariano, Design Executive Editor</span
+                      >
                     </div>
                   </transition>
 
                   <transition name="fade" mode="out-in">
                     <div class="forum-container" v-if="forum">
                       <span class="title">Chat Forum</span>
-                      <p>"I think it would be good if there was a forum portion. The only time the reader really has something to say is when our work is already done."</p>
-                      <span class="head">Carmela Masiglat, Graphic Design Editor</span>
+                      <p>
+                        "I think it would be good if there was a forum portion.
+                        The only time the reader really has something to say is
+                        when our work is already done."
+                      </p>
+                      <span class="head"
+                        >Carmela Masiglat, Graphic Design Editor</span
+                      >
                     </div>
                   </transition>
                 </div>
@@ -529,20 +677,36 @@
         </transition>
         <!-- app details -->
         <transition name="fade" mode="out-in">
-          <div id="details" v-if="active >=26 && active <=27">
+          <div id="details" v-if="active >= 26 && active <= 27">
             <div class="final-txt-container center">
               <div class="ftxt-wrapper">
                 <div class="final-txt">
-                  <p>The focus on multimedia content will also allow the publication’s Design Cluster to take on a bigger role in pitching and conceptualizing releases. According to Mariano, the Design Cluster staffs—such as Graphic Design and Photos—will be asked to pursue their own stories outside the needs of the Writing Cluster. Included in these plans is a platform for staffers to pitch their own projects in order to push for more online releases.</p>
-                  <p>In order to facilitate all these changes, The GUIDON plans to reduce the volume of its print issues, in terms of frequency of releases and overall number and length of articles, according to Soriano and Gonzalez. This move will allow writers, artists, and photographers to focus more on collaborative multimedia content.</p>
+                  <p>
+                    The focus on multimedia content will also allow the
+                    publication’s Design Cluster to take on a bigger role in
+                    pitching and conceptualizing releases. According to Mariano,
+                    the Design Cluster staffs—such as Graphic Design and
+                    Photos—will be asked to pursue their own stories outside the
+                    needs of the Writing Cluster. Included in these plans is a
+                    platform for staffers to pitch their own projects in order
+                    to push for more online releases.
+                  </p>
+                  <p>
+                    In order to facilitate all these changes, The GUIDON plans
+                    to reduce the volume of its print issues, in terms of
+                    frequency of releases and overall number and length of
+                    articles, according to Soriano and Gonzalez. This move will
+                    allow writers, artists, and photographers to focus more on
+                    collaborative multimedia content.
+                  </p>
                 </div>
 
                 <div class="stack-container">
                   <transition name="fade" mode="out-in">
-                    <div id="stack" v-if="active===26"></div>
+                    <div id="stack" v-if="active === 26"></div>
                   </transition>
                   <transition name="fade" mode="out-in">
-                    <div id="comp" v-if="active===27"></div>
+                    <div id="comp" v-if="active === 27"></div>
                   </transition>
                 </div>
               </div>
@@ -552,15 +716,28 @@
 
         <!-- FINAL WORDS -->
         <transition name="fade" mode="out-in">
-          <div id="final" v-if="active===28">
+          <div id="final" v-if="active === 28">
             <div class="collage-bg-container">
               <div id="upper"></div>
               <div id="lower"></div>
             </div>
             <div class="final-words-container center">
               <div class="final-words">
-                <p>Yet, amidst all the hype about The GUIDON’s digital platform, Soriano and Gonzalez both agree that there will always be a role for print releases, especially for issues that correspond to a specific theme. They believe that special releases have the potential to make more of an impact if they are planned out with a specific purpose in mind.</p>
-                <p>While social media trends are ever evolving, the printed format remains reliable for its constancy. Soriano states that while online content is currently more preferred, print releases provide a “safety net” and the assurance that the publication is able to release content.</p>
+                <p>
+                  Yet, amidst all the hype about The GUIDON’s digital platform,
+                  Soriano and Gonzalez both agree that there will always be a
+                  role for print releases, especially for issues that correspond
+                  to a specific theme. They believe that special releases have
+                  the potential to make more of an impact if they are planned
+                  out with a specific purpose in mind.
+                </p>
+                <p>
+                  While social media trends are ever evolving, the printed
+                  format remains reliable for its constancy. Soriano states that
+                  while online content is currently more preferred, print
+                  releases provide a “safety net” and the assurance that the
+                  publication is able to release content.
+                </p>
               </div>
             </div>
           </div>
@@ -570,8 +747,10 @@
         <transition name="fade" mode="out-in">
           <div
             class="triangle-w"
-            v-if="(this.active >= 6 && this.active <= 9) ||
-        (this.active >= 12 && this.active <= 24)"
+            v-if="
+              (this.active >= 6 && this.active <= 9) ||
+                (this.active >= 12 && this.active <= 24)
+            "
           ></div>
           <div class="triangle-n" v-else></div>
         </transition>
@@ -758,7 +937,7 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 #master {
   height: inherit;
   width: 100%;
@@ -851,9 +1030,20 @@ export default {
     transition: 0.5s all ease;
     top: 7.5%;
 
-    img {
-      @media screen and (max-width: 768px) {
-        height: 150px;
+    .tgdn-icon {
+      height: 100%;
+      width: 100%;
+      #tgdn {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../assets/icons/02 90th Year Logo (BLUE).png");
+        height: 200px;
+        width: 100%;
+
+        @media screen and (max-width: 768px) {
+          height: 150px;
+        }
       }
     }
   }
@@ -896,9 +1086,33 @@ export default {
     width: 100%;
     height: 100%;
 
-    img {
-      width: 100vw;
-      max-width: 1400px;
+    // img {
+    //   width: 100vw;
+    //   max-width: 1400px;
+    // }
+
+    .macbook-container {
+      height: 100%;
+      width: 100%;
+      #mac {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../assets/background/laptop.png");
+        width: 100vw;
+        max-width: 1400px;
+        height: inherit;
+      }
+
+      #mac-search {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../assets/background/search-laptop.png");
+        width: 100vw;
+        max-width: 1400px;
+        height: inherit;
+      }
     }
   }
 
@@ -1519,7 +1733,11 @@ export default {
         }
 
         @media screen and (max-width: 1199px) and (max-height: 1366px) and (orientation: portrait) {
-          height: 50vh;
+          height: 60vh;
+        }
+
+        @media screen and (max-width: 768px) {
+          height: 90vh;
         }
       }
     }
@@ -1789,7 +2007,7 @@ export default {
       }
 
       @media screen and (max-width: 375px) {
-        top: 25%;
+        top: 35%;
       }
 
       .live-wrapper {
@@ -1937,7 +2155,7 @@ export default {
       .saved-container,
       .forum-container {
         position: absolute;
-        margin: 5% auto;
+        margin: 10% auto;
         width: 90%;
 
         @media screen and (max-width: 768px) {
@@ -2011,6 +2229,7 @@ export default {
       line-height: 2.5em;
       @media screen and (max-width: 768px) {
         width: 100%;
+        margin: 5% 0;
       }
 
       @media screen and (max-width: 575px) {

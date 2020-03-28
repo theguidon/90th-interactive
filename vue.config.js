@@ -1,4 +1,4 @@
-const ImageminPlugin = require("imagemin-webpack-plugin").default;
+import ImageminPlugin from "imagemin-webpack-plugin";
 
 module.exports = {
   chainWebpack: config => {

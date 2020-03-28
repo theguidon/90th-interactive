@@ -566,6 +566,16 @@
           </div>
         </transition>
       </div>
+      <div id="triangle" class="center">
+        <transition name="fade" mode="out-in">
+          <div
+            class="triangle-w"
+            v-if="(this.active >= 6 && this.active <= 9) ||
+        (this.active >= 12 && this.active <= 24)"
+          ></div>
+          <div class="triangle-n" v-else></div>
+        </transition>
+      </div>
     </section>
 
     <section ref="animate-1"></section>
@@ -741,11 +751,9 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.scroll);
-    window.addEventListener("resize", this.scroll);
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.scroll);
-    window.removeEventListener("resize", this.scroll);
   }
 };
 </script>
@@ -753,10 +761,14 @@ export default {
 <style lang='scss' scoped>
 #master {
   height: inherit;
+  width: 100%;
 }
 
 // SEARCH
 #search {
+  position: fixed;
+  width: 100%;
+  height: 100%;
   // TGDN SEARCH
   .search-box {
     border-radius: 10px;
@@ -1505,6 +1517,10 @@ export default {
         @media screen and (min-width: 1400px) {
           background-position: top center;
         }
+
+        @media screen and (max-width: 1199px) and (max-height: 1366px) and (orientation: portrait) {
+          height: 50vh;
+        }
       }
     }
 
@@ -1519,19 +1535,19 @@ export default {
         text-align: justify;
         line-height: 1.5em;
 
-        font-size: $font-size--7;
+        font-size: $font-size--6;
 
         @media screen and (max-width: 1199px) {
-          font-size: $font-size--6;
+          font-size: $font-size--5;
         }
 
         @media screen and (max-width: 575px) {
-          font-size: $font-size--5;
+          font-size: $font-size--4;
           width: 80vw;
         }
 
         @media screen and (max-width: 425px) {
-          font-size: $font-size--4;
+          font-size: $font-size--3;
         }
 
         span {
@@ -1696,6 +1712,11 @@ export default {
         align-items: center;
       }
 
+      @media screen and (max-width: 1199px) and (max-height: 1366px) and (orientation: portrait) {
+        height: 90%;
+        align-items: center;
+      }
+
       span {
         color: $white;
         font-size: $font-size--6;
@@ -1709,6 +1730,14 @@ export default {
         }
 
         @media screen and(max-width: 768px) {
+          max-width: 280px;
+          color: $red;
+          font-weight: bold;
+          font-size: $font-size--4;
+          top: 10%;
+        }
+
+        @media screen and (max-width: 1199px) and (max-height: 1366px) and (orientation: portrait) {
           max-width: 280px;
           color: $red;
           font-weight: bold;
@@ -1746,7 +1775,7 @@ export default {
     // features container inside the phone
     .features-wrapper {
       height: 70vh;
-      width: 320px;
+      width: 290px;
       margin: 0 auto;
       position: absolute;
       transition: all 0.5s;
@@ -1755,12 +1784,8 @@ export default {
       align-items: center;
       flex-direction: column;
 
-      @media screen and (max-width: 1199px) {
-        width: 300px;
-      }
-
       @media screen and (max-width: 575px) {
-        width: 280px;
+        width: 270px;
       }
 
       @media screen and (max-width: 375px) {
@@ -1883,6 +1908,10 @@ export default {
       justify-content: space-between;
       flex-direction: row;
 
+      @media screen and (max-width: 1199px) and (max-height: 1366px) and (orientation: portrait) {
+        flex-direction: column;
+      }
+
       @media screen and (max-width: 768px) {
         flex-direction: column;
       }
@@ -1896,6 +1925,11 @@ export default {
           position: absolute;
           width: 100%;
         }
+
+        @media screen and (max-width: 1199px) and (max-height: 1366px) and (orientation: portrait) {
+          position: absolute;
+          width: 100%;
+        }
       }
 
       .livestreaming-container,
@@ -1903,10 +1937,14 @@ export default {
       .saved-container,
       .forum-container {
         position: absolute;
-        margin: 5%;
-        width: 100%;
+        margin: 5% auto;
+        width: 90%;
 
         @media screen and (max-width: 768px) {
+          top: 0;
+        }
+
+        @media screen and (max-width: 1199px) and (max-height: 1366px) and (orientation: portrait) {
           top: 0;
         }
 

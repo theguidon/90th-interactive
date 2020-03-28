@@ -1,5 +1,3 @@
-import ImageminPlugin from "imagemin-webpack-plugin";
-
 module.exports = {
   chainWebpack: config => {
     config.module
@@ -7,16 +5,6 @@ module.exports = {
       .use("url-loader")
       .loader("url-loader")
       .tap(options => Object.assign(options, { limit: 8000 }));
-  },
-  configureWebpack: {
-    devtool: "source-map",
-    plugins: [
-      new ImageminPlugin({
-        pngquant: {
-          quality: "90-95"
-        }
-      })
-    ]
   },
   css: {
     loaderOptions: {
